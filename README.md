@@ -4,17 +4,17 @@ This is the agent part of the project. See the [project README](https://github.c
 
 ## Configuration
 
-The agent can be configured using environemnt variables.
+The agent can be configured using environment variables.
 
 | Environment Variable | Default Value  | Description                                             |
 |----------------------|----------------|---------------------------------------------------------|
 | `CLOUD_ADDRESS`      | empty          | Address of the cloud service.                           |
-| `CLOUD_ENDPOINT`     | `v1/announce`  | Endpoint to notify the cloud service                    |
+| `CLOUD_ENDPOINT`     | `v1/announce`  | Endpoint to notify the cloud service.                   |
 | `CLOUD_ID`           | empty          | Agent ID provided by the cloud service on registration. |
 | `CLOUD_APIKEY`       | empty          | API key provided by the cloud service on registration.  |
-| `INTERVAL`           | `10`           | Interval in seconds for the agent to notify the cloud   |
-| `SERVER_ADDRESS`     | `0.0.0.0:8080` | Address of the agent health server                      |
-| `LOG_LEVEL`          | `INFO`         | Minimum log level (`DEBUG`, `INFO`, `WARN`, `ERROR`)    |
+| `INTERVAL`           | `10`           | Interval in seconds for the agent to notify the cloud.  |
+| `SERVER_ADDRESS`     | `0.0.0.0:8080` | Address of the agent health server.                     |
+| `LOG_LEVEL`          | `INFO`         | Minimum log level: `DEBUG`, `INFO`, `WARN`, `ERROR`     |
 
 ## License
 

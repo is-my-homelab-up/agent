@@ -223,9 +223,26 @@ func runTicker(logger *slog.Logger, config *config, done <-chan bool) {
 	}
 }
 
+func convertLogLevel(rawLogLevel string) slog.Level {
+	if rawLogLevel == "DEBUG" {
+		return slog.LevelDebug
+	}
+
+	if rawLogLevel == "WARN" {
+		return slog.LevelWarn
+	}
+
+	if rawLogLevel == "ERROR" {
+		return slog.LevelError
+	}
+
+	return slog.LevelInfo
+}
+
 func main() {
+	rawLogLevel, _ := getEnvVariable("LOG_LEVEL", "INFO")
 	jsonHandler := slog.NewJSONHandler(os.Stderr, &slog.HandlerOptions{
-		Level: slog.LevelDebug,
+		Level: convertLogLevel(rawLogLevel),
 	})
 
 	logger := slog.New(jsonHandler)
